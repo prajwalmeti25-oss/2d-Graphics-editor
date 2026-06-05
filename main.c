@@ -5,11 +5,11 @@
 
 char canvas[ROWS][COLS];
 
-/* Function Prototypes */
 void clearCanvas();
 void displayCanvas();
+void drawLine(int row, int col, int length);
+void drawRectangle(int row, int col, int width, int height);
 
-/* Clear the canvas */
 void clearCanvas()
 {
     for(int i = 0; i < ROWS; i++)
@@ -21,7 +21,6 @@ void clearCanvas()
     }
 }
 
-/* Display the canvas */
 void displayCanvas()
 {
     printf("\n===== CANVAS =====\n");
@@ -36,9 +35,42 @@ void displayCanvas()
     }
 }
 
+void drawLine(int row, int col, int length)
+{
+    for(int i = 0; i < length; i++)
+    {
+        if(row >= 0 && row < ROWS && col + i < COLS)
+        {
+            canvas[row][col + i] = '*';
+        }
+    }
+}
+
+void drawRectangle(int row, int col, int width, int height)
+{
+    for(int i = 0; i < width; i++)
+    {
+        if(col + i < COLS)
+        {
+            canvas[row][col + i] = '*';
+            canvas[row + height - 1][col + i] = '*';
+        }
+    }
+
+    for(int i = 0; i < height; i++)
+    {
+        if(row + i < ROWS)
+        {
+            canvas[row + i][col] = '*';
+            canvas[row + i][col + width - 1] = '*';
+        }
+    }
+}
+
 int main()
 {
     int choice;
+    int row, col, length, width, height;
 
     clearCanvas();
 
@@ -47,7 +79,9 @@ int main()
         printf("\n===== 2D GRAPHICS EDITOR =====\n");
         printf("1. Display Canvas\n");
         printf("2. Clear Canvas\n");
-        printf("3. Exit\n");
+        printf("3. Draw Line\n");
+        printf("4. Draw Rectangle\n");
+        printf("5. Exit\n");
         printf("Enter Choice: ");
         scanf("%d", &choice);
 
@@ -63,6 +97,18 @@ int main()
                 break;
 
             case 3:
+                printf("Enter Row Column Length: ");
+                scanf("%d%d%d", &row, &col, &length);
+                drawLine(row, col, length);
+                break;
+
+            case 4:
+                printf("Enter Row Column Width Height: ");
+                scanf("%d%d%d%d", &row, &col, &width, &height);
+                drawRectangle(row, col, width, height);
+                break;
+
+            case 5:
                 printf("Exiting Program...\n");
                 break;
 
@@ -70,8 +116,7 @@ int main()
                 printf("Invalid Choice!\n");
         }
 
-    } while(choice != 3);
+    } while(choice != 5);
 
     return 0;
 }
-
