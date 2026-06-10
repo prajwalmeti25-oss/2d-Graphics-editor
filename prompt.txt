@@ -1,0 +1,54 @@
+Prompt 1:
+Create a C program for a 2D Graphics Editor using a 2D character array. Initialize a canvas and implement functions to clear and display the canvas.
+
+Response 1:
+Created a canvas using a 2D character array and implemented clearCanvas() and displayCanvas() functions.
+
+
+Prompt 2:
+Extend the graphics editor by adding functions to draw horizontal lines and rectangles using '*' characters.
+
+Response 2:
+Implemented drawLine() and drawRectangle() functions with boundary checking.
+
+
+Prompt 3:
+Enhance the graphics editor by adding functions to draw triangles and circles using '*' characters.
+
+Response 3:
+Implemented drawTriangle() and drawCircle() functions using coordinate calculations and distance formulas.
+
+
+Prompt 4:
+Modify the graphics editor to support multiple shapes. Store shape information in arrays and implement a redrawAll() function.
+
+Response 4:
+Added shape storage arrays, shapeType[], sRow[], sCol[], sW[], sH[], shapeCount, and redrawAll() to redraw all stored shapes.
+
+
+Prompt 5:
+Add functionality to add shapes, list shapes, and delete shapes through a menu-driven interface.
+
+Response 5:
+Implemented addShape(), listShapes(), and deleteShape() functions. Added menu options to manage shapes.
+
+
+Prompt 6:
+Add functionality to modify existing shapes and redraw the canvas whenever changes occur.
+
+Response 6:
+Implemented modifyShape() to update shape properties and automatically redraw the canvas.
+
+
+Prompt 7:
+Implement file handling to save drawings to a file and load drawings from a file.
+
+Response 7:
+Implemented saveDrawing() and loadDrawing() using fopen(), fprintf(), fscanf(), and fclose() to store and retrieve shape information.
+
+
+Prompt 8:
+Create a complete menu-driven 2D Graphics Editor in C using a 2D character array. Implement Line, Rectangle, Triangle, Circle, Add Shape, Delete Shape, Modify Shape, List Shapes, Save Drawing, Load Drawing, Clear Canvas, and Display Canvas.
+
+Response 8:
+Developed a complete 2D Graphics Editor with support for multiple shapes, shape management, file handling, and a menu-driven user interface.
